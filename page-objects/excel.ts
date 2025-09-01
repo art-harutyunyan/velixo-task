@@ -33,7 +33,7 @@ export class Excel {
       name: "Create blank workbook",
     });
 
-    await expect(createNewBlankWorkbook).toBeVisible();
+    await expect(createNewBlankWorkbook).toBeVisible({ timeout: 20000 });
     await createNewBlankWorkbook.click();
     this.page = newPage;
     this.iframe
@@ -43,6 +43,7 @@ export class Excel {
   }
 
   async goToCell(cellNumber: string) {
+    await expect(this.cellNameBox).toBeVisible({ timeout: 20000 });
     await this.cellNameBox.click();
     await this.page.keyboard.press("Delete");
     await this.page.keyboard.press("Delete");
@@ -52,6 +53,7 @@ export class Excel {
   }
 
   async insertFormula(cellNumber: string, formula: string) {
+    await expect(this.formulaBar).toBeVisible({ timeout: 20000 });
     await this.formulaBar.click();
     await this.formulaBar.pressSequentially(formula);
     await this.formulaBar.press("Enter");

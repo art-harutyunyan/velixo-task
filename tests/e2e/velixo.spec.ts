@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { Excel } from "../../page-objects/excel";
 import { getCurrentDate } from "../../src/utils/date";
 
-test("Login to MS Office", async ({ page, context }) => {
+test("Validate Today() function in online excel", async ({ page, context }) => {
   await context.grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.goto("https://office.com", { waitUntil: "domcontentloaded" });
 

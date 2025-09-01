@@ -33,23 +33,30 @@ export class LoginFlow {
     await expect(this.signInButton).toBeVisible({ timeout: 5000 });
     await this.signInButton.click();
     await this.page.waitForLoadState("networkidle");
+    await this.page.waitForTimeout(700);
     // Inserting the username
     await expect(this.emailAddressInput).toBeVisible();
     await this.emailAddressInput.fill(username);
+    await this.page.waitForTimeout(700);
+
     // Moving to the next page
     await expect(this.nextPageButton).toBeVisible();
     await this.nextPageButton.click();
     await this.page.waitForLoadState("networkidle");
+    await this.page.waitForTimeout(700);
 
     // Changing the sign in option to use password authentication
     await this.changeSignInOptionToPassword();
     // Inserting the password
     await expect(this.passwordField).toBeVisible();
     await this.passwordField.fill(password);
+    await this.page.waitForTimeout(700);
+
     // Clicking to Login button
     await expect(this.loginButton).toBeVisible();
     await this.loginButton.click();
     await this.page.waitForLoadState("networkidle");
+    await this.page.waitForTimeout(700);
 
     // Selecting to stay signed in
     await expect(this.staySignIn).toBeVisible();
@@ -60,8 +67,10 @@ export class LoginFlow {
     await expect(this.otherWayToSignIn).toBeVisible();
     await this.otherWayToSignIn.click();
     await this.page.waitForLoadState("networkidle");
+    await this.page.waitForTimeout(700);
 
     await expect(this.useYourPassword).toBeVisible();
     await this.useYourPassword.click();
+    await this.page.waitForTimeout(700);
   }
 }

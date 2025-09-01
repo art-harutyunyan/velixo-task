@@ -1,4 +1,4 @@
-import { Browser, chromium, Page } from "@playwright/test";
+import { Browser, chromium, Page, expect } from "@playwright/test";
 import fs from "fs";
 import path from "path";
 import { LoginFlow } from "./page-objects/loginFlow";
@@ -18,6 +18,8 @@ export default async function globalSetup() {
 
   await page.goto("https://office.com", { waitUntil: "domcontentloaded" });
   await login.loginToExcel(credentials.username, credentials.password);
+
+  await expect(page.locator("#ExcelOnline")).toBeVisible({ timeout: 15000 });
 
   await page.context().storageState({ path: filePath });
   console.log("The state is created in ./state/loginAuth.json");

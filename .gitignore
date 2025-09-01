@@ -5,10 +5,6 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-.env
-state/
-.env
-
-state/
+state/loginAuth.json
 .env
 

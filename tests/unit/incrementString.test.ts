@@ -5,7 +5,7 @@ describe("Unit tests for incrementString function", () => {
     test("Increment by keeping the numbers length", () => {
       expect(incrementString("A0")).toBe("A1");
       expect(incrementString("AB00")).toBe("AB01");
-      expect(incrementString("ABC001")).toBe("AB002");
+      expect(incrementString("ABC001")).toBe("ABC002");
       expect(incrementString("ABCD0000")).toBe("ABCD0001");
     });
 

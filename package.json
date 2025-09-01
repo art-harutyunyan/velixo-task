@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "npx playwright install --with-deps",
-    "test:e2e": "npx playwright test",
-    "test:e2e:headed": "npx playwright test --headed",
-    "test:e2e:report": "npx playwright show-report",
-    "test:report:generate": "npx playwright test --reporter=html",
-    "test:unit": "npx jest"
+    "pretest": "playwright install --with-deps",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report",
+    "test:unit": "jest"
   },
   "keywords": [],
   "author": "",

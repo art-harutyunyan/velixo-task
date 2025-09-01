@@ -7,7 +7,7 @@ This project contains end-to-end tests for the Excel Online TODAY() function usi
 1. Install dependencies:
 
 ```bash
-npm install
+npm install && playwright install --with-deps
 ```
 
 2. Set environment variables for authentication:

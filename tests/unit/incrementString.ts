@@ -1,5 +1,5 @@
 export function incrementString(str: string): string {
-  const regExString = /^([A-Za-z]{1,4})(\d{1,4})$/.exec(str);
+  const regExString = /^([A-Za-z]{1,4})(\d{1,4})$/.test(str);
   if (!regExString) return "Error";
 
   const strArr: string[] = [];
